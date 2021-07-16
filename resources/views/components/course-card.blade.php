@@ -9,7 +9,7 @@
     @endif
     <div class="card-body flex-1 flex flex-col">
         <h1 class="card-title">{{ Str::limit($course->title, 30) }}</h1>
-        <p class="text-gray-500 text-sm mb-2 mt-4">Prof: {{ $course->teacher->name }}</p>
+        <p class="text-gray-500 text-sm mb-2 mt-1">Prof: {{ $course->teacher->name }}</p>
         <div class="flex">
             <ul class="flex text-sm">
                 <li>
