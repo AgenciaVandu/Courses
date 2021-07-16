@@ -29,12 +29,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
         Lesson::observe(LessonObserver::class);
         Section::observe(SectionObserver::class);
 
         Blade::directive('routeIs', function ($expression) {
             return "<?php if(Request::url() == route($expression)): ?>";
         });
-        Schema::defaultStringLength(191);
+
     }
 }
