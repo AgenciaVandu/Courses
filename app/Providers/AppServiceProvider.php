@@ -7,6 +7,7 @@ use App\Models\Section;
 use App\Observers\LessonObserver;
 use App\Observers\SectionObserver;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -34,5 +35,6 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('routeIs', function ($expression) {
             return "<?php if(Request::url() == route($expression)): ?>";
         });
+        Schema::defaultStringLength(191);
     }
 }
